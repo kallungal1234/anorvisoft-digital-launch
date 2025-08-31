@@ -8,15 +8,13 @@ const Home = () => {
     { icon: Users, label: "Happy Clients", value: "150+" },
     { icon: Award, label: "Projects Completed", value: "300+" },
     { icon: Star, label: "Client Satisfaction", value: "99%" },
-    { icon: Clock, label: "Years Experience", value: "8+" },
+    { icon: Clock, label: "Years Experience", value: "6+" },
   ];
 
   const features = [
     "Custom Software Development",
     "Responsive Web Design",
     "Performance Optimization",
-    "24/7 Technical Support",
-    "SEO & Digital Marketing",
     "Cloud Integration",
   ];
 
@@ -34,8 +32,8 @@ const Home = () => {
       rating: 5,
     },
     {
-      name: "Emily Rodriguez",
-      role: "Founder, StartupXYZ",
+      name: "Bobby Stevenson",
+      role: "Founder, Techncraft Solutions",
       content: "The team at Anorvisoft understood our vision perfectly and brought it to life with exceptional technical skills.",
       rating: 5,
     },
@@ -72,9 +70,9 @@ const Home = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="btn-outline-hero" asChild>
+              {/* <Button size="lg" variant="outline" className="btn-outline-hero" asChild>
                 <Link to="/portfolio">View Our Work</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -203,9 +201,9 @@ const Home = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
+              {/* <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 hover:text-primary" asChild>
                 <Link to="/portfolio">View Portfolio</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

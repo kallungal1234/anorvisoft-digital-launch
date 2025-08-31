@@ -13,11 +13,10 @@ const Footer = () => {
     ],
     Company: [
       { name: "About Us", path: "/about" },
-      { name: "Portfolio", path: "/portfolio" },
+      // { name: "Portfolio", path: "/portfolio" },
       { name: "Contact", path: "/contact" },
     ],
     Resources: [
-      { name: "Blog", path: "#" },
       { name: "Case Studies", path: "/portfolio" },
       { name: "Support", path: "/contact" },
     ],
@@ -48,12 +47,12 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="h-4 w-4 text-accent" />
-                <span className="text-primary-foreground/80">123 Tech Street, Digital City, DC 12345</span>
+                <span className="text-primary-foreground/80">Infopark phase 1, Cochin, Kerala 683501</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Phone className="h-4 w-4 text-accent" />
-                <span className="text-primary-foreground/80">+1 (555) 123-4567</span>
-              </div>
+                <span className="text-primary-foreground/80">+91 9048411848</span>
+              </div>  
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="h-4 w-4 text-accent" />
                 <span className="text-primary-foreground/80">contact@anorvisoft.com</span>
@@ -80,37 +79,6 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Stay Updated</h3>
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Subscribe to our newsletter for the latest tech insights and updates.
-            </p>
-            <div className="space-y-4">
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-l-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent"
-                />
-                <button className="px-4 py-2 bg-accent text-accent-foreground rounded-r-lg hover:bg-accent-light transition-colors duration-300">
-                  Subscribe
-                </button>
-              </div>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="p-2 bg-primary-foreground/10 rounded-lg hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-110"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-4 w-4" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Bar */}

@@ -16,8 +16,7 @@ const Services = () => {
         "Database Design & Management",
         "Cloud-Native Solutions"
       ],
-      technologies: ["React", "Node.js", "Python", "React Native", "AWS", "MongoDB"],
-      price: "Starting from $5,000"
+      technologies: ["React", "Node.js", "Python", "React Native", "Laravel", "MySQL"],
     },
     {
       icon: Palette,
@@ -140,16 +139,6 @@ const Services = () => {
                       </span>
                     ))}
                   </div>
-
-                  <div className="flex items-center justify-between pt-4">
-                    <div className="text-2xl font-bold text-primary">{service.price}</div>
-                    <Button className="bg-gradient-primary" asChild>
-                      <Link to="/contact">
-                        Get Quote
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
                 </div>
 
                 <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
@@ -219,9 +208,9 @@ const Services = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
+              {/* <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white hover:text-primary" asChild>
                 <Link to="/portfolio">View Our Work</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

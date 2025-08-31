@@ -51,8 +51,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: "+1 (555) 123-4567",
-      description: "Mon-Fri 9AM-6PM EST"
+      details: "+91 9048411848",
+      description: "Mon-Fri 9AM-6PM IST"
     },
     {
       icon: Mail,
@@ -63,7 +63,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Office",
-      details: "123 Tech Street, Digital City, DC 12345",
+      details: "Infopark phase 1, Cochin, Kerala 683501",
       description: "By appointment only"
     },
     {
@@ -171,7 +171,7 @@ const Contact = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-accent" />
-                    <span className="text-sm">8+ years of experience</span>
+                    <span className="text-sm">6+ years of experience</span>
                   </div>
                 </div>
               </div>
@@ -237,7 +237,7 @@ const Contact = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder=""
                       />
                     </div>
                   </div>
@@ -261,7 +261,7 @@ const Contact = () => {
                         ))}
                       </select>
                     </div>
-                    <div>
+                    {/* <div>
                       <label htmlFor="budget" className="block text-sm font-medium text-card-foreground mb-2">
                         Project Budget
                       </label>
@@ -277,7 +277,7 @@ const Contact = () => {
                           <option key={range} value={range}>{range}</option>
                         ))}
                       </select>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div>
@@ -346,7 +346,7 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Visit Our Office</h2>
             <p className="text-lg text-muted-foreground">
-              Located in the heart of Digital City, we welcome visitors by appointment.
+              Located in the heart of Cochin, we welcome visitors by appointment.
             </p>
           </div>
           
@@ -354,7 +354,7 @@ const Contact = () => {
             <div className="bg-gradient-primary text-primary-foreground rounded-xl p-12 mb-6">
               <MapPin className="h-16 w-16 mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-2">Anorvisoft Headquarters</h3>
-              <p className="text-lg opacity-90">123 Tech Street, Digital City, DC 12345</p>
+              <p className="text-lg opacity-90">Infopark phase 1, Cochin, Kerala 683501</p>
             </div>
             <p className="text-muted-foreground mb-6">
               Interactive map integration coming soon. For now, please use the address above for GPS navigation.

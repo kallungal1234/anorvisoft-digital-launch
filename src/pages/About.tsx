@@ -28,7 +28,7 @@ const About = () => {
     {
       name: "Alex Thompson",
       role: "Founder & CEO",
-      description: "8+ years in software development with expertise in full-stack technologies and business strategy.",
+      description: "6+ years in software development with expertise in full-stack technologies and business strategy.",
       image: "👨‍💼"
     },
     {
@@ -138,7 +138,7 @@ const About = () => {
       </section>
 
       {/* Team */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="section-container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
@@ -160,7 +160,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Company Timeline */}
       <section className="py-20 bg-secondary">
