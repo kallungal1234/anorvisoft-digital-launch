@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,24 +28,59 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      // EmailJS configuration
+      // Replace these with your actual EmailJS credentials
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_t5uekmn';
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_mlgptem';
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'IKGCwUXEv_Ywy3kJn';
 
-    toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
+      // Initialize EmailJS
+      emailjs.init(publicKey);
 
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      phone: "",
-      service: "",
-      budget: "",
-      message: ""
-    });
-    setIsSubmitting(false);
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company,
+        phone: formData.phone,
+        service: formData.service,
+        budget: formData.budget,
+        message: formData.message,
+        to_name: 'Anorvisoft Team',
+      };
+
+      // Send email
+      const result = await emailjs.send(serviceId, templateId, templateParams);
+      
+      console.log('Email sent successfully:', result);
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        service: "",
+        budget: "",
+        message: ""
+      });
+
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
