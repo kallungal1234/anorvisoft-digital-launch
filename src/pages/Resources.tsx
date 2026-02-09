@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Globe, ShoppingCart, Code2, Server, Cloud, Puzzle, ArrowRight, Sparkles } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import templateBeauty from "@/assets/template-beauty.png";
 import templateBaking from "@/assets/template-baking.png";
 import templateOrganic from "@/assets/template-organic.png";
@@ -133,7 +134,7 @@ const Resources = () => {
             </p>
           </div>
           <div className="max-w-4xl mx-auto px-12">
-            <Carousel opts={{ loop: true }} className="w-full">
+            <Carousel opts={{ loop: true }} plugins={[Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]} className="w-full">
               <CarouselContent>
                 {[
                   { src: templateBeauty, label: "Beauty & Salon" },
@@ -145,17 +146,17 @@ const Resources = () => {
                 ].map((item, idx) => (
                   <CarouselItem key={idx} className="md:basis-1/2 lg:basis-1/2">
                     <div className="p-2">
-                      <Card className="overflow-hidden">
-                        <CardContent className="p-0">
+                      <Card className="overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:border-accent/40">
+                        <CardContent className="p-0 overflow-hidden">
                           <img
                             src={item.src}
                             alt={`${item.label} template preview`}
-                            className="w-full h-auto object-cover"
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
                         </CardContent>
                         <CardHeader className="py-3 px-4">
-                          <CardTitle className="text-sm font-medium text-center">{item.label}</CardTitle>
+                          <CardTitle className="text-sm font-medium text-center group-hover:text-accent transition-colors duration-300">{item.label}</CardTitle>
                         </CardHeader>
                       </Card>
                     </div>
