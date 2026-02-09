@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Globe, ShoppingCart, Code2, Server, Cloud, Puzzle, ArrowRight, Sparkles } from "lucide-react";
+import templateBeauty from "@/assets/template-beauty.png";
+import templateBaking from "@/assets/template-baking.png";
+import templateOrganic from "@/assets/template-organic.png";
+import templatePizzeria from "@/assets/template-pizzeria.png";
+import templateSports from "@/assets/template-sports.png";
 
 const ASTRA_AFFILIATE_URL = "https://wpastra.com/?bsf=XXXX";
 
@@ -11,16 +16,19 @@ const astraCards = [
     title: "Business Templates",
     description: "Professional starter templates for agencies, portfolios, and corporate sites—ready to launch in minutes.",
     icon: Globe,
+    screenshots: [templateBeauty, templateBaking],
   },
   {
     title: "eCommerce Solutions",
     description: "WooCommerce-optimized storefronts with fast checkout flows, product showcases, and conversion-focused layouts.",
     icon: ShoppingCart,
+    screenshots: [templateOrganic, templateSports],
   },
   {
     title: "Developer Tools",
     description: "Lightweight theme framework with hooks, filters, and full customizer API access for bespoke builds.",
     icon: Code2,
+    screenshots: [templatePizzeria],
   },
 ];
 
@@ -86,7 +94,20 @@ const Resources = () => {
                     <CardTitle className="text-xl">{card.title}</CardTitle>
                     <CardDescription>{card.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="space-y-4">
+                    {/* Template Screenshots */}
+                    <div className={`grid ${card.screenshots.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-2`}>
+                      {card.screenshots.map((src, idx) => (
+                        <div key={idx} className="rounded-lg overflow-hidden border border-border">
+                          <img
+                            src={src}
+                            alt={`${card.title} template preview ${idx + 1}`}
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                        </div>
+                      ))}
+                    </div>
                     <Button asChild className="w-full bg-gradient-primary hover:scale-[1.03] transition-transform duration-300">
                       <a href={ASTRA_AFFILIATE_URL} target="_blank" rel="noopener noreferrer">
                         View Templates <ArrowRight className="ml-1 h-4 w-4" />
@@ -142,6 +163,13 @@ const Resources = () => {
           </Button>
         </div>
       </section>
+
+      {/* Affiliate Disclosure */}
+      <div className="py-6 px-4">
+        <p className="text-center text-xs italic text-muted-foreground/50 max-w-3xl mx-auto">
+          Disclosure: Some of the links on this page are affiliate links, meaning we may earn a small commission at no extra cost to you if you make a purchase through them. We only recommend tools and services we genuinely use and trust.
+        </p>
+      </div>
     </div>
   );
 };
