@@ -8,6 +8,7 @@ import templateBaking from "@/assets/template-baking.png";
 import templateOrganic from "@/assets/template-organic.png";
 import templatePizzeria from "@/assets/template-pizzeria.png";
 import templateSports from "@/assets/template-sports.png";
+import templateBrandstore from "@/assets/template-brandstore.png";
 
 const ASTRA_AFFILIATE_URL = "https://wpastra.com/?bsf=XXXX";
 
@@ -28,7 +29,7 @@ const astraCards = [
     title: "Developer Tools",
     description: "Lightweight theme framework with hooks, filters, and full customizer API access for bespoke builds.",
     icon: Code2,
-    screenshots: [templatePizzeria],
+    screenshots: [templatePizzeria, templateBrandstore],
   },
 ];
 
