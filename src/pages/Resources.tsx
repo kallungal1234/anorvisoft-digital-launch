@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Globe, ShoppingCart, Code2, Server, Cloud, Puzzle, ArrowRight, Sparkles } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import templateBeauty from "@/assets/template-beauty.png";
 import templateBaking from "@/assets/template-baking.png";
 import templateOrganic from "@/assets/template-organic.png";
@@ -118,6 +119,52 @@ const Resources = () => {
                 </Card>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Template Showcase Carousel */}
+      <section className="py-20">
+        <div className="section-container">
+          <div className="text-center mb-12 fade-in" ref={setRef(10)}>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Template Showcase</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              A glimpse of the starter templates powering our client projects.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto px-12">
+            <Carousel opts={{ loop: true }} className="w-full">
+              <CarouselContent>
+                {[
+                  { src: templateBeauty, label: "Beauty & Salon" },
+                  { src: templateBaking, label: "Bakery" },
+                  { src: templateOrganic, label: "Organic Store" },
+                  { src: templatePizzeria, label: "Pizzeria" },
+                  { src: templateSports, label: "Sports Wear" },
+                  { src: templateBrandstore, label: "Brand Store" },
+                ].map((item, idx) => (
+                  <CarouselItem key={idx} className="md:basis-1/2 lg:basis-1/2">
+                    <div className="p-2">
+                      <Card className="overflow-hidden">
+                        <CardContent className="p-0">
+                          <img
+                            src={item.src}
+                            alt={`${item.label} template preview`}
+                            className="w-full h-auto object-cover"
+                            loading="lazy"
+                          />
+                        </CardContent>
+                        <CardHeader className="py-3 px-4">
+                          <CardTitle className="text-sm font-medium text-center">{item.label}</CardTitle>
+                        </CardHeader>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </section>
