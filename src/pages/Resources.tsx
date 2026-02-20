@@ -12,7 +12,7 @@ import templatePizzeria from "@/assets/template-pizzeria.png";
 import templateSports from "@/assets/template-sports.png";
 import templateBrandstore from "@/assets/template-brandstore.png";
 
-const ASTRA_AFFILIATE_URL = "https://wpastra.com/?bsf=XXXX";
+const ASTRA_AFFILIATE_URL = "https://wpastra.com/?bsf=14990";
 
 const astraCards = [
   {
