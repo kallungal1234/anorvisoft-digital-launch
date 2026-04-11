@@ -11,6 +11,7 @@ import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Resources from "./pages/Resources";
 import ResourcesPabbly from "./pages/ResourcesPabbly";
+import ResourcesScraperApi from "./pages/ResourcesScraperApi";
 import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
               {/* <Route path="/portfolio" element={<Portfolio />} /> */}
               <Route path="/resources/astra" element={<Resources />} />
               <Route path="/resources/pabbly" element={<ResourcesPabbly />} />
+              <Route path="/resources/scraperapi" element={<ResourcesScraperApi />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
