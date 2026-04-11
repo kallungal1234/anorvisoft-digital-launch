@@ -20,6 +20,7 @@ const Navbar = () => {
   const resourcesSubItems = [
     { name: "Astra", path: "/resources/astra" },
     { name: "Pabbly", path: "/resources/pabbly" },
+    { name: "ScraperAPI", path: "/resources/scraperapi" },
   ];
 
   useEffect(() => {
